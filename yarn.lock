@@ -8477,10 +8477,10 @@ gatsby-plugin-anchor-links@^1.2.1:
   dependencies:
     scroll-to-element "^2.0.3"
 
-gatsby-plugin-catch-links@^4.11.0:
-  version "4.12.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-4.12.1.tgz#568d96c9fb9752d6fee6e26904f4b91a96576ee0"
-  integrity sha512-xTf909I+eIXuPzpvLaan90NGT8Tb+TihsvPxqeFyS7s8oqNm/E9jgqfbU6HNFAqRypGauy8P+MVGUBoRS7jwUQ==
+gatsby-plugin-catch-links@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-4.16.0.tgz#3a2276b33df6a6fbca2dafa09ac08ed5985108f5"
+  integrity sha512-4Jev1vUfb85uT1aDlpjNZTQ6iuFJmeSaVXIkJX28vIbddtLcARhqyi3OHced3OGTdwtMl2DVviofMMwU3Zke+g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     escape-string-regexp "^1.0.5"
