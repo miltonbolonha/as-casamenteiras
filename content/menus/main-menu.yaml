@@ -1,0 +1,22 @@
+menu:
+  status: true
+  name: MAIN_MENU
+  items:
+    - item:
+        label: Componentes
+        href: /componentes
+    - item:
+        label: Módulos
+        href: /modulos
+    - item:
+        label: Documentação
+        href: /documentacao
+    - item:
+        label: Contato
+        to: /contato
+    - item:
+        icon: bag
+    - item:
+        search_widget: false
+        search_label: Procure um curso
+        search_url_prefix: /cursos?search=

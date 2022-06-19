@@ -1,0 +1,17 @@
+main_menu:
+  - link: {
+      label: Componentes,
+      href: /componentes
+    }
+  - link: {
+      label: Módulos,
+      href: /modulos
+    }
+  - link: {
+      label: Documentação,
+      href: /documentacao
+    }
+  - link: {
+      label: Contato,
+      to: /contato
+    }
