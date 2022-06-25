@@ -51,7 +51,7 @@ const Header = ({
         opt={{
           bgColor: bgTwo,
           isBoxed: false,
-          classes: "header-logo-wrapper desktop-only",
+          classes: "header-logo-wrapper",
         }}
       >
         <Row opt={{ isBoxed: true, classes: "header-logo" }}>{logo}</Row>
