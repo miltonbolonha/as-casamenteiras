@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import { Row } from "../components/InsertRow";
 
@@ -32,6 +32,7 @@ const IndexPage = props => {
     instaImg,
     twitterImg,
     whatsImg,
+    bgPatternImg,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
@@ -94,6 +95,7 @@ const IndexPage = props => {
   const homeHighlightRelatedListPost = findItemhomeHighlightRelatedList(posts);
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+  const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
   const diamondQuery = getImage(diamond.childrenImageSharp[0]);
   const diamondBgQuery = getImage(diamondBg.childrenImageSharp[0]);
@@ -148,6 +150,9 @@ const IndexPage = props => {
 
   return (
     <MainTemplateWrapper
+      backgroundImage={{
+        src: bgPatternSrc,
+      }}
       logo={
         <GatsbyImage
           image={logoQuery}
@@ -159,21 +164,9 @@ const IndexPage = props => {
       }
       seoSchema={defaultSchema(props.location)}
     >
-      <Row
-        opt={{ classes: "banner colorME", isBoxed: true, role: "something" }}
-      >
-        <GatsbyImage
-          image={imageQuery}
-          alt={"title"}
-          placeholder={"NONE"}
-          critical='true'
-          className={" banner-img"}
-        />
-      </Row>
-
       <main className='main-container' id='site-content' role='list'>
-        <HeadingBlock classes='m30auto hack' importance={10} width={400}>
-          Simone Tebet
+        <HeadingBlock classes='m30auto hack' importance={10} width={300}>
+          Assessoria e Cerimonial
         </HeadingBlock>
         <Row opt={{ classes: "home-infos", isBoxed: true, role: "something" }}>
           <section className='main-page-wrapper'>
@@ -245,17 +238,17 @@ const IndexPage = props => {
                 >
                   <div className='home-profile-left-column'>
                     <p>
-                      <strong>Total Redundante de Seguidores: </strong>150
+                      <strong>Casamentos Realizados: </strong>45
                       <sup>*</sup>
                     </p>
                     <p>
-                      <strong>Intenção de votos: </strong>2%
+                      <strong>Casamentos em Andamento: </strong>17
                     </p>
                     <p>
-                      <strong>Coligação conhecida: </strong>MDB, PSDB, CNN
+                      <strong>Amor da Vida: </strong>Milton Bolonha
                     </p>
                     <p>
-                      <strong>Experiência política: </strong>30 anos
+                      <strong>Anos de Experiência: </strong>30 anos
                     </p>
                     <GatsbyImage
                       image={githubGetImg}
@@ -366,21 +359,9 @@ const IndexPage = props => {
                     }`}
                   >
                     <h2>Histórico</h2>
-                    <p>
-                      Simone Tebet, 52 anos, é natural de Três Lagoas, Minas
-                      Gerais.
-                    </p>
-                    <p>
-                      Filha de um político de ascendência libanesa, que também
-                      foi professor, advogado, promotor de justiça, sociólogo.
-                    </p>
-                    <p>
-                      Destaca-se na política pelo seu notório saber jurídico e
-                      posicionamentos firmes. Simone é advogada, professora
-                      universitária e política. Formou-se em Direito pela
-                      Universidade Federal do Rio de Janeiro. É especialista em
-                      Ciência do Direito pela Escola Superior de Magistratura.
-                    </p>
+                    <p>As Casamenteiras...</p>
+                    <p>Filha de ...</p>
+                    <p>Destaca-se ...</p>
                   </div>
                   <div
                     className={`home-profile-tab ${
@@ -388,46 +369,25 @@ const IndexPage = props => {
                     }`}
                   >
                     <h2>Profissão</h2>
-                    <p>
-                      Começou sua vida profissional aos 22 anos como professora
-                      universitária em seu Estado, no ano de 1992, atividade que
-                      exerceu por 12 anos. Trabalhou na Universidade Federal de
-                      Mato Grosso do Sul, Universidade Católica Dom Bosco,
-                      Universidade para o Desenvolvimento do Estado e Região do
-                      Pantanal e Faculdades Integradas de Campo Grande.
-                    </p>
-                    <p>
-                      Foi consultora técnica jurídica da Assembleia Legislativa
-                      do Mato Grosso do Sul entre os anos de 1995 e 1997 e foi
-                      diretora técnica legislativa entre 1997 e 2001.
-                    </p>
+                    <p>Começou sua vida profissional aos ...</p>
+                    <p>Foi consultora ...</p>
                   </div>
                   <div
                     className={`home-profile-tab ${
                       btnRef === 3 ? "" : "hide-me"
                     }`}
                   >
-                    <h2>Família Tebet</h2>
-                    <p>
-                      Tal como o pai, falecido, a filha possue vida pública por
-                      meio do Movimento Democrático Brasileiro (MDB). A senadora
-                      entrou efetivamente na política ao ser eleita aos 31 anos
-                      como Deputada Estadual, pelo então PMDB.
-                    </p>
-                    <p>
-                      Simone Tebet têm duas filhas e é casada com o político
-                      Eduardo Rocha, deputado estadual pelo estado do Mato
-                      Grosso do Sul. A declaração de bens de ambos é superior a
-                      3 milhões de reais.
-                    </p>
+                    <h2>As Casamenteiras</h2>
+                    <p>Tal como ...</p>
+                    <p>As Casamenteiras têm ...</p>
                   </div>
                 </Row>
               </div>
             </Row>
           </section>
         </Row>
-        <HeadingBlock classes='m30auto hack' importance={9} width={400}>
-          Destaques da Simone
+        <HeadingBlock classes='m30auto hack' importance={9} width={300}>
+          Destaques d'As Casamenteiras
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock
@@ -491,9 +451,13 @@ export const queryAtividade = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-            updated: date
-            updatedModified: date(formatString: "YYYY-MM-DDTHH:mm:SS")
+            updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+            created: createdAt(
+              formatString: "DD [de] MMMM [de] YYYY"
+              locale: "pt-br"
+            )
+            updated: updatedAt
+            updatedModified: updatedAt(formatString: "YYYY-MM-DDTHH:mm:SS")
             title
             headline
             categories

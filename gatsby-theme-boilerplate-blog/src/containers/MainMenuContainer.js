@@ -18,7 +18,7 @@ const MainMenuContainer = ({
       ref={wrapperRef}
       id='site-navigation'
       itemScope='itemScope'
-      itemType='http://schema.org/SiteNavigationElement'
+      itemType='https://schema.org/SiteNavigationElement'
     >
       <ul
         className='main-ul'

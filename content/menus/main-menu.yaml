@@ -6,11 +6,11 @@ menu:
         label: Biografia
         to: /biografia/
     - item:
-        label: Atos da Simone
-        to: /atos-simone/
+        label: Portifólio Yaml
+        to: /portifolio/
     - item:
-        label: Discursos
-        to: /discursos/
+        label: Casamentos
+        to: /casamentos/
     - item:
         label: Contato
         to: /contato/

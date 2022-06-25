@@ -3,23 +3,21 @@ import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
 import { defaultSchema } from "../configs/schemas";
 import { getSrc } from "gatsby-plugin-image";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
-
-const Contato = ({ location }) => {
+const Portifolio = ({ location }) => {
   const { bgPatternImg } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-
   return (
     <MainPageWrapper
       backgroundImage={{
         src: bgPatternSrc,
       }}
       seoSchema={defaultSchema(location)}
-      title='Contato'
+      title='Módulos'
     >
-      <h2>Fale Conosco</h2>
-      <p>Sem falar.</p>
+      <h2>O que são módulos?</h2>
+      <p>Teste aqui de tipografia aleatório contendo texto em língua nativa.</p>
     </MainPageWrapper>
   );
 };
 
-export default Contato;
+export default Portifolio;

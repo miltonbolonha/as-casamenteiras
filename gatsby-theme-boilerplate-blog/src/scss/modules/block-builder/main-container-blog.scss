@@ -25,8 +25,8 @@
     	margin: 0 auto;
 			position: relative;
 			z-index: 1;
-			border: 2px solid $primary_background;
-			background-color: $primary_ultralight;
+			border: 2px solid $cta__color;
+			background-color: $cta__color;
 			display: grid;
 			grid-template-rows: 1fr 0.5fr;
 			align-items: center;
@@ -37,10 +37,11 @@
 			// }
 
 			&:hover{
-				border: 2px solid $primary_light;
+				border: 2px solid $cta__colorLink;
 			}
 			
 			.watch-later{
+				display: none;
 				position: absolute;
 				top: -15px;
 				right: -15px;
@@ -50,8 +51,8 @@
 				text-align: center;
 				border-radius: 50%;
 				font-size: 24px;
-				color: $primary_light;
-				border: 2px solid $primary_light;
+				color: $cta__color;
+				border: 2px solid $cta__color;
 				background-color: white;	
 				z-index: 9;
 				span{
@@ -59,7 +60,7 @@
 				}
 				&:hover{
 					color: white;
-					background-color: $primary_dark;
+					background-color: $cta__color;
 					span{
 						font-size: 12px;
 						line-height: 22px;
@@ -71,8 +72,8 @@
 						border-radius: 5px;
 						display: block;
 						z-index: 10;
-						background-color: $primary_dark;
-						border: 2px solid $primary_light;
+						background-color: $cta__color;
+						border: 2px solid $cta__color;
 						font-family: $third__font;
 					}
 				}

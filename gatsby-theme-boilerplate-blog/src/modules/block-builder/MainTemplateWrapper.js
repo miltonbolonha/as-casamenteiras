@@ -9,10 +9,16 @@ import HeaderBlock from "@BlockBuilder/HeaderBlock";
 
 import FooterBlock from "@BlockBuilder/FooterBlock";
 
-const MainTemplateWrapper = ({ children, seoSchema, classes, logo }) => {
+const MainTemplateWrapper = ({
+  children,
+  seoSchema,
+  classes,
+  logo,
+  backgroundImage,
+}) => {
   const { githubImg, instaImg, twitterImg, whatsImg } = useSiteMetadatas();
   return (
-    <BodyBlock opt={{ classes: classes }}>
+    <BodyBlock opt={{ classes: classes, bgImg: backgroundImage.src }}>
       <SeoContainer opt={seoSchema} />
       <HeaderBlock logotipoSvg={logo} />
       {children}

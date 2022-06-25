@@ -42,7 +42,10 @@ export const useSiteMetadatas = () =>
                 slug
               }
               frontmatter {
-                date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+                updatedAt(
+                  formatString: "DD [de] MMMM [de] YYYY"
+                  locale: "pt-br"
+                )
                 title
                 categories
                 footerFeaturedImage: featuredImage {
@@ -61,18 +64,15 @@ export const useSiteMetadatas = () =>
           }
         }
         boilerplateLogo: file(
-          relativePath: { eq: "boilerplate-blog-logo.png" }
+          relativePath: { eq: "logo-fundo-transparent-900-w.png" }
         ) {
           childrenImageSharp {
-            gatsbyImageData(
-              width: 190
-              height: 75
-              placeholder: NONE
-              quality: 100
-            )
+            gatsbyImageData(width: 900, placeholder: NONE, quality: 100)
           }
         }
-        profileOficial: file(relativePath: { eq: "senadora-oficial.jpg" }) {
+        profileOficial: file(
+          relativePath: { eq: "android-chrome-512x512.png" }
+        ) {
           childrenImageSharp {
             gatsbyImageData(
               width: 160
@@ -170,6 +170,18 @@ export const useSiteMetadatas = () =>
           childrenImageSharp {
             gatsbyImageData(
               height: 80
+              placeholder: NONE
+              quality: 100
+              backgroundColor: "transparent"
+            )
+          }
+        }
+        bgPatternImg: file(
+          relativePath: { eq: "as-casamenteiras-PATTERN-bg.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              height: 107
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"

@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import { Row } from "../../components/InsertRow";
 
@@ -13,7 +13,13 @@ import HeaderBlock from "@BlockBuilder/HeaderBlock";
 
 import FooterBlock from "@BlockBuilder/FooterBlock";
 
-const MainPageWrapper = ({ children, title, seoSchema, classes }) => {
+const MainPageWrapper = ({
+  children,
+  title,
+  seoSchema,
+  classes,
+  backgroundImage,
+}) => {
   const {
     githubImg,
     instaImg,
@@ -24,9 +30,12 @@ const MainPageWrapper = ({ children, title, seoSchema, classes }) => {
   } = useSiteMetadatas();
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+  const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
 
   return (
-    <BodyBlock opt={{ classes: classes }}>
+    <BodyBlock
+      opt={{ classes: classes, bgImg: backgroundImage.src || logoQuerySrc }}
+    >
       <SeoContainer opt={seoSchema} />
 
       <HeaderBlock

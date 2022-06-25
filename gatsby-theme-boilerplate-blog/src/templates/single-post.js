@@ -1,25 +1,41 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 
-import MainTemplateWrapper from '@BlockBuilder/MainTemplateWrapper'
+import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
-import SinglePostBlock from '@BlockBuilder/SinglePostBlock'
-import { useSiteMetadatas } from '../tools/useSiteMetadatas'
-import { articleSchema } from '../configs/schemas'
+import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
+import { useSiteMetadatas } from "../tools/useSiteMetadatas";
+import { articleSchema } from "../configs/schemas";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 const SinglePost = ({ data, location }) => {
-  const { imgHolder } = useSiteMetadatas()
-  const post = data.markdownRemark
+  const { imgHolder, bgPatternImg, boilerplateLogo } = useSiteMetadatas();
+  const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
+  const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+
+  const post = data.markdownRemark;
   return (
     <MainTemplateWrapper
-      classes="single-post"
+      backgroundImage={{
+        src: bgPatternSrc,
+      }}
+      logo={
+        <GatsbyImage
+          image={logoQuery}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={""}
+        />
+      }
+      classes='single-post'
       seoSchema={articleSchema(data, location)}
     >
       <main>
         <SinglePostBlock
           highlightImage={post?.frontmatter?.featuredImage}
           authorImg={imgHolder}
-          date={post.frontmatter.date}
+          date={post.frontmatter.updatedAt}
           author={post.frontmatter.author}
           html={post.html}
           title={post.frontmatter.title}
@@ -29,15 +45,15 @@ const SinglePost = ({ data, location }) => {
         />
       </main>
     </MainTemplateWrapper>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query SinglePost($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+        updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
         author
         categories
         featuredPost
@@ -65,6 +81,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default SinglePost
+export default SinglePost;

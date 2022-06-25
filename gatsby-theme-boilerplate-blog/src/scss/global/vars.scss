@@ -1,8 +1,10 @@
 // Colors
-$brand__color: #0093FF;
-$cta__color: #0093FF;
+$brand__color: #032741;
+$cta__color: #011624;
+$cta__colorLink: #ffcd2b;
+$hot__color: #032741;
 $cta__contrast_color: #df0000;
-$link__color: #2e2e2e;
+$link__color: #fff;
 
 
 $primary: $cta__color;
@@ -10,7 +12,8 @@ $primary_background__color: #E5F4FF;
 $primary_background: mix(white, $cta__color, 90%);
 $primary_bg_dark: mix(white, $cta__color, 35%);
 $primary_ultralight: mix(white, $cta__color, 80%);
-$primary_light: mix(white, $cta__color, 55%);
+$primary_light: mix(white, $cta__colorLink, 25%);
+$primary_lightVar: rgb(169, 208, 255);
 $primary_dark: mix(black, $cta__color, 35%);
 $primary_ultradark: mix(black, $cta__color, 80%);
 

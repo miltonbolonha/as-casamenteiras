@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simone-tebet/gatsby-theme-boilerplate-blog.git"
+    "url": "git+https://github.com/miltonbolonha/as-casamenteiras.git"
   },
   "license": "MIT",
   "publishConfig": {
@@ -44,6 +44,6 @@
     "identity-obj-proxy": "^3.0.0"
   },
   "bugs": {
-    "url": "https://github.com/simone-tebet/gatsby-theme-boilerplate-blog/issues"
+    "url": "https://github.com/miltonbolonha/as-casamenteiras/issues"
   }
 }

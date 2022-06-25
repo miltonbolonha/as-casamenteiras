@@ -4,7 +4,7 @@ import { defaultSchema } from "../configs/schemas";
 import { getSrc } from "gatsby-plugin-image";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
-const Contato = ({ location }) => {
+const Documentacao = ({ location }) => {
   const { bgPatternImg } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
 
@@ -14,12 +14,14 @@ const Contato = ({ location }) => {
         src: bgPatternSrc,
       }}
       seoSchema={defaultSchema(location)}
-      title='Contato'
+      title='Documentação'
     >
-      <h2>Fale Conosco</h2>
-      <p>Sem falar.</p>
+      <h2>Glossário</h2>
+      <p>Palavras-chave.</p>
+      <h2>Pronto para começar</h2>
+      <p>Palavras-chave.</p>
     </MainPageWrapper>
   );
 };
 
-export default Contato;
+export default Documentacao;

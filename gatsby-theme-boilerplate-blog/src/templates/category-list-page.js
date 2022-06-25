@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import { Row } from "../components/InsertRow";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
@@ -24,7 +24,10 @@ const CategoryListPage = props => {
                   slug
                 }
                 frontmatter {
-                  date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+                  updatedAt(
+                    formatString: "DD [de] MMMM [de] YYYY"
+                    locale: "pt-br"
+                  )
                   title
                   categories
                   featuredImage {
@@ -47,18 +50,26 @@ const CategoryListPage = props => {
       render={data => {
         const categoriesList = data.allMarkdownRemark.edges;
 
-        const { site, bannerContent, boilerplateLogo } = useSiteMetadatas();
+        const {
+          site,
+          bannerContent,
+          boilerplateLogo,
+          bgPatternImg,
+        } = useSiteMetadatas();
 
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
         const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
         const categoriesContext = props.pageContext.categories;
+
+        const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
         const categoriesListFiltered = categoriesList.filter(item => {
           return item.node.frontmatter.categories.includes(categoriesContext);
         });
         return (
           <MainTemplateWrapper
-            classes='blog-list'
-            seoSchema={defaultSchema(props.location)}
+            backgroundImage={{
+              src: bgPatternSrc,
+            }}
             logo={
               <GatsbyImage
                 image={logoQuery}
@@ -68,6 +79,8 @@ const CategoryListPage = props => {
                 className={""}
               />
             }
+            classes='blog-list'
+            seoSchema={defaultSchema(props.location)}
           >
             <Row
               opt={{

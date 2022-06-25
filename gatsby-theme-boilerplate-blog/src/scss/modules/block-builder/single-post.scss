@@ -54,7 +54,7 @@
 	box-shadow: 0px 15px 15px 3px rgba(144, 144, 144, 0.05);
 	border: 2px solid transparent;
 	&:hover{
-	border: 2px solid $primary_light;
+	border: 2px solid $primary;
 	}
 	.close-btn-single-post{
 		position: absolute;
@@ -65,7 +65,7 @@
 		font-size: 16px;
 		font-family: $fourth__font;
 		background-color: #fff;
-		border: 2px solid $primary_light;
+		border: 2px solid $primary;
 		border-radius: 50%;
 		display: flex;
 		justify-content: center;
@@ -75,9 +75,9 @@
 		span{
 			display: none;
 		}
-		color: $primary_light;
+		color: $primary;
 		a{
-			color: $primary_light;
+			color: $primary;
 			padding: 5px 10px;
 		&:hover{
 			color: $primary_background;
@@ -85,7 +85,7 @@
 		}
 		}
 		&:hover{
-			background-color: $primary_dark;
+			background-color: $primary;
 			span{
 				color: $primary_background;
 				font-size: 12px;
@@ -99,8 +99,8 @@
 				border-radius: 5px;
 				display: block;
 				z-index: 10;
-				background-color: $primary_dark;
-				border: 2px solid $primary_light;
+				background-color: $primary;
+				border: 2px solid $primary;
 				font-family: $third__font;
 			}
 		}
@@ -131,10 +131,10 @@
 		margin:0 5px;
 
 		&:nth-child(even){
-		color: $primary_dark;
+		color: $primary;
 	}
 	&:hover{
-		background-color: $primary_dark;
+		background-color: $primary;
 		color: white;
 	}
 }
@@ -199,6 +199,7 @@
 		p{
 		font-family: $fourth__font;
 		font-weight: 300;
+			color: $primary;
 			// line-height: 28px;
 			margin-bottom: 16px;
 		}
@@ -231,7 +232,7 @@
 			font-family: $fourth__font;
 			text-transform: uppercase;
 			font-weight: 700;
-
+			color: $primary;
 			& strong{
 			font-weight: 900;
 			}

@@ -26,9 +26,9 @@ const defaultSchema = location => {
     brandEmail: organization.email,
     brandName: organization.name,
     brandSocialArr: {
-      instagram: "https://www.instagram.com/tebetfans",
-      facebook: "https://www.facebook.com/tebetfans",
-      linkedIn: "https://www.linkedin.com/company/tebetfans",
+      instagram: "https://www.instagram.com/ascasamenteiras_",
+      facebook: "https://www.facebook.com/ascasamenteiras_",
+      linkedIn: "https://www.linkedin.com/company/ascasamenteiras_",
       youtube: "asd",
       twitter: "asd",
     },
@@ -44,17 +44,12 @@ const defaultSchema = location => {
 const articleSchema = (data, location) => {
   const { cardImage, imgHolder, site } = useSiteMetadatas();
   const post = data.markdownRemark;
-  const {
-    keywords,
-    dateCreated,
-    organization,
-    themeColor,
-    siteUrl,
-  } = site.siteMetadata;
+  const { keywords, dateCreated, organization, themeColor, siteUrl } =
+    site.siteMetadata;
   return {
     schemaType: "article",
     startedWebsiteDate: dateCreated,
-    createdPageDate: post.frontmatter.date,
+    createdPageDate: post.frontmatter.updatedAt,
     pageTitle: `${post.frontmatter.title} - Boileplate`,
     pageDescription: post.excerpt,
     authorWebsiteData: organization.url,
@@ -70,9 +65,9 @@ const articleSchema = (data, location) => {
     brandEmail: organization.email,
     brandName: organization.name,
     brandSocialArr: {
-      instagram: "https://www.instagram.com/tebetfans",
-      facebook: "https://www.facebook.com/tebetfans",
-      linkedIn: "https://www.linkedin.com/company/tebetfans",
+      instagram: "https://www.instagram.com/ascasamenteiras_schema",
+      facebook: "https://www.facebook.com/ascasamenteiras_schema",
+      linkedIn: "https://www.linkedin.com/company/ascasamenteiras_schema",
       youtube: "asd",
       twitter: "asd",
     },

@@ -1,27 +1,27 @@
 schema:
   - card:
-      appName: Simone Tebet Fans
+      appName: As Casamenteiras Fans
       version: "1.0.0"
-      brandDescription: App para fãs da Simone Tebet.
+      brandDescription: App para fãs da As Casamenteiras.
       brandurl: /
-      brandName: Simone Tebet
+      brandName: As Casamenteiras
       keywords:
-        - key: simone tebet
+        - key: As Casamenteiras
         - key: cursos
         - key: curso online
         - key: power skills
         - key: soft skills
         - key: habilidades
-        - key: tebet fans
+        - key: casamenteiras
       sameAs:
-        facebook: https://www.facebook.com/tebetfans
-        instagram: https://www.instagram.com/tebetfans
-        linkedIn: https://br.linkedin.com/school/tebetfans
-        youtube: https://www.youtube.com/c/tebetfans
+        facebook: https://www.facebook.com/ascasamenteiras_yml
+        instagram: https://www.instagram.com/ascasamenteiras_yml
+        linkedIn: https://br.linkedin.com/school/ascasamenteiras_yml
+        youtube: https://www.youtube.com/c/ascasamenteiras_yml
       alternateName: a
       potentialAction: Learning
       telephone: "+551130420043"
       contactType: Serviço Ao Cliente
-      email: contato@tebet.fans
+      email: cerimonial@ascasamenteiras.com.br
       inLanguage: 'pt-BR'
       datePublished: 05 de março de 2022

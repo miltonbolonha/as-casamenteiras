@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export const Row = ({ opt, children }) => {
-  const rowWidth = opt.isBoxed ? 'boxed-column' : 'full-width-row'
-  const alignTo = opt.alignTo ? `align-to-${opt.alignTo}` : ''
+  const rowWidth = opt.isBoxed ? "boxed-column" : "full-width-row";
+  const alignTo = opt.alignTo ? `align-to-${opt.alignTo}` : "";
   const templateColumns = `repeat(${opt.numColumns ||
-    '1'}, ${opt.widthColumns || '1fr'})`
-  const bgParent = opt.bgColor && opt.isBoxed === false ? opt.bgColor : null
-  const bgChild = opt.bgColor && opt.isBoxed === true ? opt.bgColor : null
+    "1"}, ${opt.widthColumns || "1fr"})`;
+  const bgParent = opt.bgColor && opt.isBoxed === false ? opt.bgColor : null;
+  const bgChild = opt.bgColor && opt.isBoxed === true ? opt.bgColor : null;
   return (
     <div
       className={`${rowWidth} ${opt.classes} ${alignTo} responsive-padding`}
@@ -15,16 +15,16 @@ export const Row = ({ opt, children }) => {
       }}
     >
       <div
-        className={rowWidth + '-child ' + opt.classes}
+        className={rowWidth + "-child " + opt.classes}
         role={opt.role || null}
         style={{
           backgroundColor: bgChild,
-          display: 'grid',
+          display: "grid",
           gridTemplateColumns: templateColumns,
         }}
       >
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

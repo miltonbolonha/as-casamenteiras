@@ -12,34 +12,34 @@
     "habilidades",
     "escola online"
   ],
-  "description": "Tema para o blog feito por fãs da Simone Tebet.",
+  "description": "Tema para o blog feito da As Casamenteiras.",
   "author": {
     "name": "Milton Bolonha",
     "email": "miltonbolonha@gmail.com"
   },
   "organization": {
-    "name": "Boileplate",
-    "url": "https://simone-tebet.netlify.app/",
+    "name": "As Casamenteiras",
+    "url": "https://ascasamenteiras.com.br/",
     "email": "contato@tebet.fans",
     "logo": "boilerplate-banner.png",
     "cardImage": "boilerplate-banner.png",
     "phone": "+5516981061234"
   },
-  "repository": "https://github.com/simone-tebet/gatsby-theme-boilerplate-blog",
+  "repository": "https://github.com/miltonbolonha/as-casamenteiras",
   "urlPrefix": "/",
-  "appName": "Simone Tebet Fans",
+  "appName": "As Casamenteiras",
   "appLogic": "Blog",
   "dateCreated": "05 de março de 2022",
-  "siteUrl": "https://simone-tebet.netlify.app/",
-  "searchBaseUrl": "https://simone-tebet.netlify.app/cursos?search=",
-  "clientOrg": "Simone Tebet",
+  "siteUrl": "https://ascasamenteiras.com.br/",
+  "searchBaseUrl": "https://ascasamenteiras.com.br/cursos?search=",
+  "clientOrg": "As Casamenteiras",
   "clientShortName": "Tebet",
   "clientSocial": {
-    "instagram": "https://www.instagram.com/tebetfans/",
-    "facebook": "https://www.facebook.com/tebetfans/",
-    "linkedIn": "https://br.linkedin.com/school/tebetfans",
-    "youtube": "https://www.youtube.com/c/tebetfans",
-    "twitter": "tebetfans"
+    "instagram": "https://www.instagram.com/ascasamenteirasperfil/",
+    "facebook": "https://www.facebook.com/ascasamenteirasperfil/",
+    "linkedIn": "https://br.linkedin.com/school/ascasamenteirasperfil",
+    "youtube": "https://www.youtube.com/c/ascasamenteirasperfil",
+    "twitter": "ascasamenteirasperfil"
   },
   "themeColor": "#fc4303",
   "backgroundColor": "#fff",
