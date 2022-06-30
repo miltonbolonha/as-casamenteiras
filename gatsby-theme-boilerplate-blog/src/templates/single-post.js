@@ -5,11 +5,11 @@ import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
 import SinglePostBlock from "@BlockBuilder/SinglePostBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
-import { articleSchema } from "../configs/schemas";
+
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 const SinglePost = ({ data, location }) => {
-  const { imgHolder, bgPatternImg, boilerplateLogo } = useSiteMetadatas();
+  const { imgHolder, bgPatternImg, boilerplateLogo, site } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
 
