@@ -8,10 +8,10 @@ module.exports = {
     title: businessInfos.appName,
     description: businessInfos.description,
     author: businessInfos.author,
-    siteUrl: "https://boilerplate-blog.netlify.app/",
+    siteUrl: businessInfos.siteUrl,
     searchBaseUrl: businessInfos.searchBaseUrl,
     keywords: businessInfos.keywords,
-    image: `${__dirname}/static/images/boilerplate-blog-logo.svg`,
+    image: `${__dirname}/static/images/${businessInfos.organization.logo}`,
     dateCreated: businessInfos.dateCreated,
     postsPerPage: businessInfos.postsPerPage,
     themeColor: businessInfos.themeColor,
@@ -34,9 +34,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-anchor-links`,
-    `gatsby-layout-builder`,
-    `gatsby-layout-builder-seo`,
-    `gatsby-layout-builder-a11y`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

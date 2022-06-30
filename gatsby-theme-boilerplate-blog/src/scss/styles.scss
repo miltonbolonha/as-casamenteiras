@@ -25,15 +25,10 @@ Version: 1.0.0
 @import 'global/base';
 
 /*--------------------------------------------------------------
-3.1 Modules / Layout
+3.1 Components
 --------------------------------------------------------------*/
 
-// @import 'modules/layout/menus';
-// @import 'modules/layout/header';
-// @import 'modules/layout/footer';
-// @import 'modules/layout/row';
-// @import 'modules/layout/row-bgColors';
-
+@import 'components/row';
 
 /*--------------------------------------------------------------
 3.1 Modules / Block Builder

@@ -29,7 +29,27 @@ const SinglePost = ({ data, location }) => {
         />
       }
       classes='single-post'
-      seoSchema={articleSchema(data, location)}
+      // seoSchema={articleSchema(data, location)}
+      opt={{
+        titleSeo: `${post.frontmatter.title} - Descola`,
+        authorSeo: post.frontmatter.author,
+        classes: "single-post",
+        datePublished: post.frontmatter.date,
+        schemaType: "article",
+        featuredImage:
+          site.siteMetadata.siteUrl +
+          post.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
+            .images.fallback.src,
+        cardImage:
+          post.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
+            .images.fallback.src,
+        articleBody: post.html,
+        mainLogo: imgHolder,
+        description: post.excerpt,
+        serverUrl: location.origin || site.siteMetadata.siteUrl || "/",
+        articleUrl: location.href,
+        social: site.siteMetadata.social.twitter,
+      }}
     >
       <main>
         <SinglePostBlock

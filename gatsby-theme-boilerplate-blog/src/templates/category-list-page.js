@@ -80,7 +80,16 @@ const CategoryListPage = props => {
               />
             }
             classes='blog-list'
-            seoSchema={defaultSchema(props.location)}
+            // seoSchema={defaultSchema(props.location)}
+            opt={{
+              titleSeo: `As Casamenteiras - Listagem de Postagens`,
+              classes: "blog-list",
+              schemaType: "blog",
+              cardImage: getSrc(cardImage.childrenImageSharp[0]),
+              blogListing: tagList.slice(0, 9),
+              serverUrl:
+                props.location.origin || site.siteMetadata.siteUrl || "/",
+            }}
           >
             <Row
               opt={{

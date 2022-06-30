@@ -3,10 +3,8 @@ import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
 import { Row } from "../../components/InsertRow";
 
-import SeoContainer from "gatsby-layout-builder-seo";
 import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import { useSiteMetadatas } from "../../tools/useSiteMetadatas";
-import BoilerplateLogo from "@Images/boilerplate-blog-logo.svg";
 
 import BodyBlock from "@BlockBuilder/BodyBlock";
 import HeaderBlock from "@BlockBuilder/HeaderBlock";
@@ -16,7 +14,7 @@ import FooterBlock from "@BlockBuilder/FooterBlock";
 const MainPageWrapper = ({
   children,
   title,
-  seoSchema,
+  opt,
   classes,
   backgroundImage,
 }) => {
@@ -31,13 +29,18 @@ const MainPageWrapper = ({
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
-
+  console.log("logoQuery");
+  console.log(logoQuery);
+  console.log("logoQuerySrc");
+  console.log(logoQuerySrc);
   return (
     <BodyBlock
-      opt={{ classes: classes, bgImg: backgroundImage.src || logoQuerySrc }}
+      opt={{
+        classes: classes,
+        bgImg: backgroundImage.src || logoQuerySrc,
+        options: opt,
+      }}
     >
-      <SeoContainer opt={seoSchema} />
-
       <HeaderBlock
         logotipoSvg={
           <GatsbyImage
@@ -76,6 +79,15 @@ const MainPageWrapper = ({
         instaImg={instaImg}
         twitterImg={twitterImg}
         whatsImg={whatsImg}
+        logo={
+          <GatsbyImage
+            image={logoQuery}
+            alt={"title"}
+            placeholder={"NONE"}
+            critical='true'
+            className={""}
+          />
+        }
       />
     </BodyBlock>
   );

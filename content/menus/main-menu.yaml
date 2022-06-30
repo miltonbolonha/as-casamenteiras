@@ -3,16 +3,25 @@ menu:
   name: MAIN_MENU
   items:
     - item:
-        label: Biografia
+        label: Nossos Casais
         to: /biografia/
     - item:
-        label: Portifólio Yaml
+        label: Corporativos
         to: /portifolio/
     - item:
-        label: Casamentos
+        label: Depoimentos
         to: /casamentos/
     - item:
-        label: Contato
+        label: Assessoria e Cerimonial
+        to: /contato/
+    - item:
+        label: Cerimonialistas
+        to: /contato/
+    - item:
+        label: Calcule a Sua Festa
+        to: /contato/
+    - item:
+        label: RSVP e Contato
         to: /contato/
     - item:
         icon: bag

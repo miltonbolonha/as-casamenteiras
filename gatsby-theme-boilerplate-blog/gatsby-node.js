@@ -3,7 +3,7 @@ const path = require("path");
 const _ = require("lodash");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const rootDir = path.join(__dirname, "../");
-
+const businessInfos = require("./package.json");
 // Adding slug field to each post
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -30,6 +30,11 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
     {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
       allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
@@ -56,6 +61,8 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            excerpt(pruneLength: 200)
+            htmlAst
           }
         }
       }
@@ -112,5 +119,67 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     });
+
+    let allFeed = [];
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let imgsObj = [];
+
+      const slug = node.fields.slug;
+      const frontmatter = node.frontmatter;
+      const { date, title } = frontmatter;
+      const imageSrc =
+        businessInfos.siteUrl +
+        node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
+          .images.fallback.src;
+
+      node.htmlAst.children.map(child => {
+        if (child.children && child.children[0]) {
+          if (child.children[0].tagName === "img") {
+            imgsObj.push(child.children[0].properties.src);
+          }
+        }
+      });
+
+      allFeed.push({
+        slug: slug,
+        date: date,
+        title: title,
+        imageSrc: imageSrc,
+        excerpt: node.excerpt,
+        insideImgs: imgsObj,
+      });
+    });
+    const theXML = `<?xml version="1.0" encoding="UTF-8"?>
+		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
+			<urlset
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+				${allFeed.map(item => {
+          return `<url>
+					<loc>${businessInfos.siteUrl}${item.slug}</loc>
+					<lastmod>${item.date}</lastmod>
+					<image:image>
+						<image:loc>${item.imageSrc}</image:loc>
+					</image:image>
+						${
+              item.insideImgs.length > 0
+                ? item.insideImgs.map(img => {
+                    return `<image:image>
+											<image:loc>${
+                        img.substring(0, 4) === "http"
+                          ? img
+                          : businessInfos.siteUrl + img
+                      }</image:loc>
+										</image:image>`;
+                  })
+                : ""
+            }
+				</url>`;
+        })}
+		</urlset>
+		`;
+    fs.writeFileSync(`./public/post-sitemap.xml`, theXML);
   });
 };

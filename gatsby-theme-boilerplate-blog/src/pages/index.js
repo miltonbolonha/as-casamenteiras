@@ -10,8 +10,6 @@ import HeadingBlock from "@BlockBuilder/HeadingBlock";
 
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
-import { defaultSchema } from "../configs/schemas";
-
 const IndexPage = props => {
   const [btnRef, setBtnRef] = useState(1);
   const handleSetBtnRef = ref => {
@@ -33,6 +31,8 @@ const IndexPage = props => {
     twitterImg,
     whatsImg,
     bgPatternImg,
+    imgHolder,
+    cardImage,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
@@ -147,7 +147,8 @@ const IndexPage = props => {
   const hourLegend = diffHours === 1 ? "hora e" : " horas e";
   const hoursCaption =
     diffHours === 0 ? "" : diffHours + " " + hourLegend + " ";
-
+  console.log("bgPatternSrc");
+  console.log(bgPatternSrc);
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -162,7 +163,15 @@ const IndexPage = props => {
           className={""}
         />
       }
-      seoSchema={defaultSchema(props.location)}
+      opt={{
+        titleSeo: `As Casamenteiras - Todo Amor Importa`,
+        classes: "blog-list",
+        schemaType: "blog",
+        blogListing: posts.slice(0, 9),
+        mainLogo: imgHolder,
+        cardImage: cardImage ? getSrc(cardImage.childrenImageSharp[0]) : null,
+        serverUrl: props.location.href,
+      }}
     >
       <main className='main-container' id='site-content' role='list'>
         <HeadingBlock classes='m30auto hack' importance={10} width={300}>
@@ -243,9 +252,6 @@ const IndexPage = props => {
                     </p>
                     <p>
                       <strong>Casamentos em Andamento: </strong>17
-                    </p>
-                    <p>
-                      <strong>Amor da Vida: </strong>Milton Bolonha
                     </p>
                     <p>
                       <strong>Anos de Experiência: </strong>30 anos

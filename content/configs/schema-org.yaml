@@ -1,25 +1,25 @@
 schema:
   - card:
-      appName: As Casamenteiras Fans
+      appName: As Casamenteiras Fans TESTE ISSO PODE IR EMBORA ?
       version: "1.0.0"
-      brandDescription: App para fãs da As Casamenteiras.
+      brandDescription: Assessoria e Cerimonial para casamentos, eventos corporativos e festas em geral.
       brandurl: /
       brandName: As Casamenteiras
       keywords:
         - key: As Casamenteiras
-        - key: cursos
-        - key: curso online
-        - key: power skills
-        - key: soft skills
-        - key: habilidades
+        - key: assessoria em eventos
+        - key: cerimonialista
+        - key: casamentos
+        - key: cerimonial
+        - key: cerimonialista ribeirão preto
         - key: casamenteiras
       sameAs:
         facebook: https://www.facebook.com/ascasamenteiras_yml
         instagram: https://www.instagram.com/ascasamenteiras_yml
         linkedIn: https://br.linkedin.com/school/ascasamenteiras_yml
         youtube: https://www.youtube.com/c/ascasamenteiras_yml
-      alternateName: a
-      potentialAction: Learning
+      alternateName: alllllright
+      potentialAction: ReadAction
       telephone: "+551130420043"
       contactType: Serviço Ao Cliente
       email: cerimonial@ascasamenteiras.com.br
