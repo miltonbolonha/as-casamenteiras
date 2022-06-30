@@ -1,11 +1,10 @@
 import React from "react";
 import MainPageWrapper from "@BlockBuilder/MainPageWrapper";
-import { defaultSchema } from "../configs/schemas";
 import { getSrc } from "gatsby-plugin-image";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const Documentacao = ({ location }) => {
-  const { bgPatternImg } = useSiteMetadatas();
+  const { bgPatternImg, cardImage } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
 
   return (
@@ -13,8 +12,13 @@ const Documentacao = ({ location }) => {
       backgroundImage={{
         src: bgPatternSrc,
       }}
-      seoSchema={defaultSchema(location)}
-      title='Documentação'
+      opt={{
+        titleSeo: `Módulos - As Casamenteiras - Todo Amor Importa`,
+        classes: "blog-list main-page-wrapper",
+        schemaType: "blog",
+        cardImage: getSrc(cardImage.childrenImageSharp[0]),
+        serverUrl: location.origin,
+      }}
     >
       <h2>Glossário</h2>
       <p>Palavras-chave.</p>

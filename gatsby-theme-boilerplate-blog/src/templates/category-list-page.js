@@ -7,7 +7,6 @@ import HeadingBlock from "@BlockBuilder/HeadingBlock";
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 import PostsBlock from "@BlockBuilder/PostsBlock";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
-import { defaultSchema } from "../configs/schemas";
 
 const CategoryListPage = props => {
   return (
@@ -55,6 +54,7 @@ const CategoryListPage = props => {
           bannerContent,
           boilerplateLogo,
           bgPatternImg,
+          cardImage,
         } = useSiteMetadatas();
 
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
@@ -86,7 +86,7 @@ const CategoryListPage = props => {
               classes: "blog-list",
               schemaType: "blog",
               cardImage: getSrc(cardImage.childrenImageSharp[0]),
-              blogListing: tagList.slice(0, 9),
+              blogListing: categoriesList.slice(0, 9),
               serverUrl:
                 props.location.origin || site.siteMetadata.siteUrl || "/",
             }}

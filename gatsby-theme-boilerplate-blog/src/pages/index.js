@@ -147,8 +147,6 @@ const IndexPage = props => {
   const hourLegend = diffHours === 1 ? "hora e" : " horas e";
   const hoursCaption =
     diffHours === 0 ? "" : diffHours + " " + hourLegend + " ";
-  console.log("bgPatternSrc");
-  console.log(bgPatternSrc);
   return (
     <MainTemplateWrapper
       backgroundImage={{

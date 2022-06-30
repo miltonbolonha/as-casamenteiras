@@ -5,16 +5,22 @@ import { getSrc } from "gatsby-plugin-image";
 import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 const Biografia = ({ location }) => {
-  const { bgPatternImg } = useSiteMetadatas();
+  const { bgPatternImg, cardImage } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
 
   return (
     <MainPageWrapper
       seoSchema={defaultSchema(location)}
       title='Biografia'
-      classes='main-page-wrapper'
       backgroundImage={{
         src: bgPatternSrc,
+      }}
+      opt={{
+        titleSeo: `As Casamenteiras - Todo Amor Importa`,
+        classes: "blog-list main-page-wrapper",
+        schemaType: "blog",
+        cardImage: getSrc(cardImage.childrenImageSharp[0]),
+        serverUrl: location.origin,
       }}
     >
       <p>As Casamenteiras frase de impacto.</p>

@@ -29,10 +29,6 @@ const MainPageWrapper = ({
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
-  console.log("logoQuery");
-  console.log(logoQuery);
-  console.log("logoQuerySrc");
-  console.log(logoQuerySrc);
   return (
     <BodyBlock
       opt={{
@@ -52,7 +48,7 @@ const MainPageWrapper = ({
           />
         }
       />
-      <Row opt={{ classes: "banner colorME", isBoxed: true }}>
+      {/* <Row opt={{ classes: "banner colorME", isBoxed: true }}>
         <GatsbyImage
           image={imageQuery}
           alt={"Imagem em Destaque"}
@@ -60,7 +56,7 @@ const MainPageWrapper = ({
           critical='true'
           className={"highlight-img"}
         />
-      </Row>
+      </Row> */}
       <main className='main-container' id='site-content' role='list'>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
           {title}
