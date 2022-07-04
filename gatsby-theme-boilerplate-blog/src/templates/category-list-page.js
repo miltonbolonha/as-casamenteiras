@@ -62,9 +62,9 @@ const CategoryListPage = props => {
         const categoriesContext = props.pageContext.categories;
 
         const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
-        const categoriesListFiltered = categoriesList.filter(item => {
-          return item.node.frontmatter.categories.includes(categoriesContext);
-        });
+        // const categoriesListFiltered = categoriesList.filter(item => {
+        //   return item.node.frontmatter.categories.includes(categoriesContext);
+        // });
         return (
           <MainTemplateWrapper
             backgroundImage={{
@@ -111,7 +111,7 @@ const CategoryListPage = props => {
                 Posts da Categoria: {props.pageContext.categories}
               </HeadingBlock>
               <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
-                <PostsBlock
+                {/* <PostsBlock
                   postList={categoriesListFiltered}
                   postsPerPage={site.siteMetadata.postsPerPage}
                   readMoreText='Ler Mais'
@@ -119,7 +119,7 @@ const CategoryListPage = props => {
                     loadMoreBtn: true,
                     loadMore: "Ler Mais",
                   }}
-                />
+                /> */}
               </Row>
             </main>
           </MainTemplateWrapper>

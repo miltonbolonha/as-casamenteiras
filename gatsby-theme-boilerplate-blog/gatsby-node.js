@@ -69,7 +69,10 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-      categoriesGroup: allMarkdownRemark(limit: 800) {
+      categoriesGroup: allMarkdownRemark(
+        filter: { frontmatter: { date: { lt: "null" } } }
+        limit: 800
+      ) {
         group(field: frontmatter___categories) {
           fieldValue
           nodes {
