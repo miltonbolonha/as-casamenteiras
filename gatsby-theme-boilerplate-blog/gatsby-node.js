@@ -99,12 +99,9 @@ exports.createPages = ({ graphql, actions }) => {
           node {
             frontmatter {
               status
-              template
               title
               description
               slug
-              main_heading
-              content_type
             }
             html
           }
@@ -120,14 +117,12 @@ exports.createPages = ({ graphql, actions }) => {
           path: node.frontmatter.slug,
           component: path.resolve(
             rootDir,
-            `gatsby-theme-boilerplate-blog/src/templates/${node.frontmatter.template}.js`
+            `gatsby-theme-boilerplate-blog/src/templates/one-column.js`
           ),
           context: {
             title: node.frontmatter.title,
-            slug: node.frontmatter.slug,
-            main_heading: node.frontmatter.main_heading,
-            content_type: node.frontmatter.content_type,
             content: node.html,
+            description: node.frontmatter.description,
           },
         });
       }

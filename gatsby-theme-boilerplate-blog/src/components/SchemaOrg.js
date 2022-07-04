@@ -39,13 +39,7 @@ export default React.memo(
         url: siteUrl,
         email: email,
         description: brandDescription,
-        sameAs: [
-          sameAs.instagram,
-          sameAs.facebook,
-          sameAs.linkedIn,
-          sameAs.youtube,
-        ],
-        potentialAction: "Learning",
+        sameAs: [sameAs.instagram],
         logo: organizationLogo,
         contactPoint: [
           {
@@ -64,19 +58,13 @@ export default React.memo(
         name: title,
         description: brandDescription,
         url: siteUrl,
-        potentialAction: "Learning",
         keywords: [keywords.map(e => e)],
         inLanguage: inLanguage,
         copyrightYear: new Date().getFullYear(),
         datePublished: dateCreated,
         dateModified: dateNow,
         image: image || featuredImage,
-        sameAs: [
-          sameAs.instagram,
-          sameAs.facebook,
-          sameAs.linkedIn,
-          sameAs.youtube,
-        ],
+        sameAs: [sameAs.instagram],
       },
     ];
 

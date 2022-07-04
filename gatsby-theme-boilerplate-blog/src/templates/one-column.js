@@ -18,14 +18,7 @@ const OneColumn = ({ data, location, pageContext }) => {
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   console.log("pageContext");
   console.log(pageContext);
-  const {
-    title,
-    slug,
-    main_heading,
-    content_type,
-    content,
-    description,
-  } = pageContext;
+  const { title, content, description } = pageContext;
   return (
     <MainPageWrapper
       backgroundImage={{

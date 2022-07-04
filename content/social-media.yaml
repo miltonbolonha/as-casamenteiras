@@ -1,13 +1,5 @@
 social_media:
   - item: {
-      href: https://br.linkedin.com/school/ascasamenteiras_yaml,
-      icon: LinkedIn
-    }
-  - item: {
-      href: https://www.instagram.com/ascasamenteiras_yaml,
+      href: https://www.instagram.com/ascasamenteiras_,
       icon: Instagram
-    }
-  - item: {
-      href: https://www.facebook.com/ascasamenteiras_yaml,
-      icon: Facebook
     }
