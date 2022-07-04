@@ -35,7 +35,10 @@ exports.createPages = ({ graphql, actions }) => {
           siteUrl
         }
       }
-      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { frontmatter: { date: { lt: "null" } } }
+      ) {
         edges {
           node {
             fields {
@@ -86,8 +89,47 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allPages: allMarkdownRemark(
+        filter: { frontmatter: { status: { eq: true } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              status
+              template
+              title
+              description
+              slug
+              main_heading
+              content_type
+            }
+            html
+          }
+        }
+      }
     }
   `).then(result => {
+    const pages = result.data.allPages.edges;
+
+    pages.forEach(({ node }) => {
+      if (node.frontmatter.status === true) {
+        createPage({
+          path: node.frontmatter.slug,
+          component: path.resolve(
+            rootDir,
+            `gatsby-theme-boilerplate-blog/src/templates/${node.frontmatter.template}.js`
+          ),
+          context: {
+            title: node.frontmatter.title,
+            slug: node.frontmatter.slug,
+            main_heading: node.frontmatter.main_heading,
+            content_type: node.frontmatter.content_type,
+            content: node.html,
+          },
+        });
+      }
+    });
+
     const posts = result.data.allMarkdownRemark.edges;
     posts.forEach(({ node }) => {
       createPage({

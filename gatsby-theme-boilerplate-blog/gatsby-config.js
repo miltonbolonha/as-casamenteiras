@@ -35,6 +35,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet-async`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -71,6 +72,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `yaml`,
+        path: path.resolve(rootDir, "content/"),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: path.resolve(__dirname, "static/images/"),
       },
@@ -87,6 +95,13 @@ module.exports = {
       options: {
         name: `posts`,
         path: path.resolve(rootDir, "posts/"),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: path.resolve(rootDir, "content/pages"),
       },
     },
     `gatsby-plugin-mdx`,

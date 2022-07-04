@@ -4,25 +4,25 @@ menu:
   items:
     - item:
         label: Nossos Casais
-        to: /biografia/
+        to: /nossos-casais/
     - item:
         label: Corporativos
-        to: /portifolio/
+        to: /corporativos/
     - item:
         label: Depoimentos
-        to: /casamentos/
+        to: /depoimentos/
     - item:
         label: Assessoria e Cerimonial
-        to: /contato/
+        to: /assessoria-cerimonial/
     - item:
         label: Cerimonialistas
-        to: /contato/
+        to: /cerimonialistas/
     - item:
         label: Calcule a Sua Festa
-        to: /contato/
+        to: /calculadora-eventos/
     - item:
         label: RSVP e Contato
-        to: /contato/
+        to: /rsvp-contato/
     - item:
         icon: bag
     - item:

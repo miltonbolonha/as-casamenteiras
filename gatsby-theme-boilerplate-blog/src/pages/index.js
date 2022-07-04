@@ -36,7 +36,8 @@ const IndexPage = props => {
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
-
+  console.log("posts");
+  console.log(posts);
   const findItemFeatured = postsList => {
     let x = null;
 
@@ -447,6 +448,7 @@ export const queryAtividade = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { date: { lt: "null" } } }
       limit: 900
     ) {
       edges {

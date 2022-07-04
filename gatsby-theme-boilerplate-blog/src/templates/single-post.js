@@ -14,6 +14,8 @@ const SinglePost = ({ data, location }) => {
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
 
   const post = data.markdownRemark;
+  console.log("post::");
+  console.log(post);
   return (
     <MainTemplateWrapper
       backgroundImage={{
