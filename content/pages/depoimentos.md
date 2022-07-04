@@ -3,9 +3,6 @@ status: true
 title: Depoimentos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: depoimentos
-template: one-column
-main_heading: Depoimentos
-content_type: MAIN
 ---
 
 No Depoimentos.NAME\_\_, nosso objetivo é fornecer conteúdo para todos.

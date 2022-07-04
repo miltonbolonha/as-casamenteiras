@@ -3,9 +3,6 @@ status: true
 title: RSVP e Contato
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: rsvp-contato
-template: one-column
-main_heading: RSVP e Contato
-content_type: MAIN
 ---
 
 No RSVP.NAME\_\_, nosso objetivo é fornecer conteúdo para todos.

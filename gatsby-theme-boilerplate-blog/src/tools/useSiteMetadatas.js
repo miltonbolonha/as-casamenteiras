@@ -105,8 +105,8 @@ export const useSiteMetadatas = () =>
         imgHolder: file(relativePath: { eq: "oval-logo.png" }) {
           childrenImageSharp {
             gatsbyImageData(
-              width: 76
-              height: 76
+              width: 600
+              height: 600
               placeholder: NONE
               quality: 100
             )

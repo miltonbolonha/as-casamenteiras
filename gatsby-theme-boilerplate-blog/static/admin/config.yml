@@ -31,3 +31,16 @@ collections:
       - { label: "Featured Post", name: "featuredPost", widget: "boolean" }
       - { label: "Featured Image", name: "featuredImage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: page
+    label: Pages
+    folder: content/pages
+    label_singular: Page
+    description: >
+      Página em MD do blog Boileplate.
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Status", name: "status", widget: "boolean" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

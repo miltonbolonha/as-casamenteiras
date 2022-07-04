@@ -3,9 +3,6 @@ status: true
 title: Corporativos
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: corporativos
-template: one-column
-main_heading: Corporativos
-content_type: MAIN
 ---
 
 No Corporativos.NAME\_\_, nosso objetivo é fornecer conteúdo para todos.

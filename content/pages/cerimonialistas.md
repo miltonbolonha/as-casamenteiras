@@ -3,9 +3,6 @@ status: true
 title: Cerimonialistas
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: cerimonialistas
-template: one-column
-main_heading: Cerimonialistas
-content_type: MAIN
 ---
 
 No Cerimonialistas.NAME\_\_, nosso objetivo é fornecer conteúdo para todos.
