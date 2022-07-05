@@ -14,14 +14,11 @@ schema:
         - key: cerimonialista ribeirão preto
         - key: casamenteiras
       sameAs:
-        facebook: https://www.facebook.com/ascasamenteiras_yml
-        instagram: https://www.instagram.com/ascasamenteiras_yml
-        linkedIn: https://br.linkedin.com/school/ascasamenteiras_yml
-        youtube: https://www.youtube.com/c/ascasamenteiras_yml
+        instagram: https://www.instagram.com/ascasamenteiras_
       alternateName: alllllright
       potentialAction: ReadAction
       telephone: "+551130420043"
       contactType: Serviço Ao Cliente
       email: cerimonial@ascasamenteiras.com.br
       inLanguage: 'pt-BR'
-      datePublished: 05 de março de 2022
+      datePublished: 04 de julho de 2022
