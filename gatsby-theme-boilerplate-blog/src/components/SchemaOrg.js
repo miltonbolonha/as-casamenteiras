@@ -35,7 +35,7 @@ export default React.memo(
       {
         "@type": ["Organization"],
         "@context": "http://schema.org",
-        name: title,
+        name: "As Casamenteiras",
         url: siteUrl,
         email: email,
         description: brandDescription,
