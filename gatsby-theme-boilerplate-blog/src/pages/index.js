@@ -163,7 +163,7 @@ const IndexPage = props => {
         />
       }
       opt={{
-        titleSeo: `As Casamenteiras`,
+        titleSeo: `Assessoria e Cerimonial`,
         classes: "blog-list",
         schemaType: "blog",
         blogListing: posts.slice(0, 9),

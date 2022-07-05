@@ -38,7 +38,7 @@ const Seo = ({
         htmlAttributes={{
           lang,
         }}
-        titleTemplate={`%s | ${siteTitle}`}
+        titleTemplate={`%s - ${siteTitle}`}
       >
         <title>{title}</title>
         <meta name='description' content={metaDescription} />
