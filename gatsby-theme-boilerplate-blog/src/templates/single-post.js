@@ -33,7 +33,7 @@ const SinglePost = ({ data, location }) => {
       classes='single-post'
       // seoSchema={articleSchema(data, location)}
       opt={{
-        titleSeo: `${post.frontmatter.title} - Descola`,
+        titleSeo: `${post.frontmatter.title}`,
         authorSeo: post.frontmatter.author,
         classes: "single-post",
         datePublished: post.frontmatter.date,

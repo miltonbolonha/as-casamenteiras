@@ -35,7 +35,7 @@ const OneColumn = ({ data, location, pageContext }) => {
         />
       }
       opt={{
-        titleSeo: `As Casamenteiras - Todo Amor Importa`,
+        titleSeo: `As Casamenteiras`,
         classes: "one-column",
         // blogListing: posts.slice(0, 9),
         mainLogo: imgHolder,

@@ -163,7 +163,7 @@ const IndexPage = props => {
         />
       }
       opt={{
-        titleSeo: `As Casamenteiras - Todo Amor Importa`,
+        titleSeo: `As Casamenteiras`,
         classes: "blog-list",
         schemaType: "blog",
         blogListing: posts.slice(0, 9),
