@@ -61,24 +61,41 @@ const Seo = ({
           <meta property='fb:app_id' content={social.fbAppID} />
         ) : null}
         {/* Twitter Card tags */}
-        <meta name='twitter:card' content='summary_large_image' />
+
+        {social.twitter ? (
+          <meta name='twitter:card' content='summary_large_image' />
+        ) : (
+          ""
+        )}
         {social.twitter ? (
           <meta name='twitter:creator' content={social.twitter} />
         ) : null}
-        <meta name='twitter:title' content={title} />
-        <meta name='twitter:description' content={description} />
-        <meta
-          name='twitter:image:src'
-          content={cardImagesrc || featuredImage}
-        />
-        <meta name='theme-color' content={themeColor || "#FF0081"} />
-        <meta name='twitter:site' content={`@` + social.twitter} />
+        {social.twitter ? <meta name='twitter:title' content={title} /> : ""}
+        {social.twitter ? (
+          <meta name='twitter:description' content={description} />
+        ) : (
+          ""
+        )}
+        {social.twitter ? (
+          <meta
+            name='twitter:image:src'
+            content={cardImagesrc || featuredImage}
+          />
+        ) : (
+          ""
+        )}
+        {social.twitter ? (
+          <meta name='twitter:site' content={`@` + social.twitter} />
+        ) : (
+          ""
+        )}
         <meta name='author' content={author} />
         {datePublished ? (
           <meta name='article:published_time' content={datePublished} />
         ) : (
           ""
         )}
+        <meta name='theme-color' content={themeColor || "#FF0081"} />
       </Helmet>
       <SchemaOrgContainer
         schemaType={schemaType}

@@ -55,6 +55,7 @@ const CategoryListPage = props => {
           boilerplateLogo,
           bgPatternImg,
           cardImage,
+          imgHolder,
         } = useSiteMetadatas();
 
         const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
@@ -85,6 +86,7 @@ const CategoryListPage = props => {
               titleSeo: `As Casamenteiras - Listagem de Postagens`,
               classes: "blog-list",
               schemaType: "blog",
+              mainLogo: imgHolder,
               cardImage: getSrc(cardImage.childrenImageSharp[0]),
               blogListing: categoriesList.slice(0, 9),
               serverUrl:
