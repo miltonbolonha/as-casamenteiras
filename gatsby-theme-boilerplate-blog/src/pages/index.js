@@ -496,7 +496,6 @@ const IndexPage = props => {
           critical='true'
           className={" whatsMe"}
         />
-        <p>Chama No What's</p>
       </div>
     </MainTemplateWrapper>
   );
