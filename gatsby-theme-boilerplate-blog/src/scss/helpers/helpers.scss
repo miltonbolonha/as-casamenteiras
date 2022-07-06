@@ -297,7 +297,7 @@ img{
 		max-width: $widescreen__size;
 		width: 100%;
 		margin: 0 auto;
-		li{ padding: 0 25px; a{
+		li{ margin: 0 auto; a{
 			color:white; font-family: $third__font; line-height: 33px;
 			&:hover{
 				color: $primary_light;

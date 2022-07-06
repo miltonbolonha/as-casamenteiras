@@ -78,7 +78,7 @@ const MainMenuList = ({
           aria-controls='mainmenu'
           aria-expanded={refState}
           aria-label='Alternar visibilidade do menu'
-          className={`menu-wrapper menu-bar-icon mobile-only ${
+          className={`menu-wrapper menu-bar-icon  ${
             refState ? "active" : "not-active"
           }`}
         >

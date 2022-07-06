@@ -6,20 +6,11 @@ menu:
         label: Nossos Casais
         to: /nossos-casais/
     - item:
-        label: Corporativos
-        to: /corporativos/
-    - item:
-        label: Depoimentos
-        to: /depoimentos/
-    - item:
         label: Assessoria e Cerimonial
         to: /assessoria-cerimonial/
     - item:
         label: Cerimonialistas
         to: /cerimonialistas/
-    - item:
-        label: Calcule a Sua Festa
-        to: /calculadora-eventos/
     - item:
         label: RSVP e Contato
         to: /rsvp-contato/

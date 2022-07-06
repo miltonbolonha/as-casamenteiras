@@ -1,4 +1,4 @@
-@media (min-width: $mobileIndexButtons__maxWidth) and (max-width: $boxedDesktop__maxWidth) {
+@media (min-width: $mobileIndexButtons__maxWidth) and (max-width: $tabletHack__size) {
 	.desktop-only {
 		display: none !important;
 	}
@@ -8,7 +8,7 @@
 		}
 	}
 }
-@media (min-width: $tabletHack__size) {
+@media (min-width: $boxedDesktop__maxWidth) {
 	.mobile-only {
 		display: none !important;
 	}
