@@ -43,13 +43,13 @@ const MainMenuList = ({
       </li>
     );
   }
-  if (list.item.icon) {
-    return (
-      <li className='menu-shop-bag' key={indx} role='none'>
-        {bagIcon}
-      </li>
-    );
-  }
+  // if (list.item.icon) {
+  //   return (
+  //     <li className='menu-shop-bag' key={indx} role='none'>
+  //       {bagIcon}
+  //     </li>
+  //   );
+  // }
   if (list.item.search_widget) {
     return (
       <li className='main-menu-search' key={indx}>

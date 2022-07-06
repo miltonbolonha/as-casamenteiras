@@ -33,6 +33,11 @@ const IndexPage = props => {
     bgPatternImg,
     imgHolder,
     cardImage,
+    bandeiraFeminista,
+    bandeiraLgbtqia,
+    bandeiraRibeiraoPreto,
+    bandeiraVidasNegras,
+    bandeiraWhats,
   } = useSiteMetadatas();
   const { data } = props;
   const posts = data.allMarkdownRemark.edges;
@@ -95,6 +100,14 @@ const IndexPage = props => {
   const homeHighlightRelatedPost = findItemhomeHighlightRelated(posts);
   const homeHighlightRelatedListPost = findItemhomeHighlightRelatedList(posts);
   const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
+  const badgeFeminista = getImage(bandeiraFeminista.childrenImageSharp[0]);
+  const badgeLgbtqia = getImage(bandeiraLgbtqia.childrenImageSharp[0]);
+  const badgeRibeiraoPreto = getImage(
+    bandeiraRibeiraoPreto.childrenImageSharp[0]
+  );
+  const badgeVidasNegras = getImage(bandeiraVidasNegras.childrenImageSharp[0]);
+  const badgeWhats = getImage(bandeiraWhats.childrenImageSharp[0]);
+
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const profileQuery = getImage(profileOficial.childrenImageSharp[0]);
@@ -408,18 +421,55 @@ const IndexPage = props => {
           />
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
-          Crie o seu próprio site
+          Causas Que Apoiamos
         </HeadingBlock>
         <Row
-          opt={{ classes: "banner colorME", isBoxed: true, role: "something" }}
+          opt={{
+            isBoxed: true,
+            classes: "footer-badges-wrapper",
+            numColumns: 4,
+          }}
         >
-          <GatsbyImage
-            image={imageQuery}
-            alt={"title"}
-            placeholder={"NONE"}
-            critical='true'
-            className={" banner-img"}
-          />
+          <div>
+            <GatsbyImage
+              image={badgeFeminista}
+              alt={"title"}
+              placeholder={"NONE"}
+              critical='true'
+              className={" footer-badges"}
+            />
+            <h3>Empreendedorismo Feminino</h3>
+          </div>
+          <div>
+            <GatsbyImage
+              image={badgeLgbtqia}
+              alt={"title"}
+              placeholder={"NONE"}
+              critical='true'
+              className={" footer-badges"}
+            />
+            <h3>Amor LGBTQIA+</h3>
+          </div>
+          <div>
+            <GatsbyImage
+              image={badgeVidasNegras}
+              alt={"title"}
+              placeholder={"NONE"}
+              critical='true'
+              className={" footer-badges"}
+            />
+            <h3>Vidas Negras Importam</h3>
+          </div>
+          <div>
+            <GatsbyImage
+              image={badgeRibeiraoPreto}
+              alt={"title"}
+              placeholder={"NONE"}
+              critical='true'
+              className={" footer-badges"}
+            />
+            <h3>Comércio Local</h3>
+          </div>
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
           Últimos Eventos
@@ -438,6 +488,16 @@ const IndexPage = props => {
           />
         </Row>
       </main>
+      <div className='whatsMeWrapper'>
+        <GatsbyImage
+          image={badgeWhats}
+          alt={"title"}
+          placeholder={"NONE"}
+          critical='true'
+          className={" whatsMe"}
+        />
+        <p>Chama No What's</p>
+      </div>
     </MainTemplateWrapper>
   );
 };

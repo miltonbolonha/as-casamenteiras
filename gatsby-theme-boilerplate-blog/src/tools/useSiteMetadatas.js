@@ -71,7 +71,7 @@ export const useSiteMetadatas = () =>
           }
         }
         profileOficial: file(
-          relativePath: { eq: "android-chrome-512x512.png" }
+          relativePath: { eq: "android-chrome-512x512.jpg" }
         ) {
           childrenImageSharp {
             gatsbyImageData(
@@ -185,6 +185,62 @@ export const useSiteMetadatas = () =>
               placeholder: NONE
               quality: 100
               backgroundColor: "transparent"
+            )
+          }
+        }
+        bandeiraFeminista: file(
+          relativePath: { eq: "bandeira-feminista.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraLgbtqia: file(relativePath: { eq: "bandeira-lgbtqia+.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraRibeiraoPreto: file(
+          relativePath: { eq: "bandeira-ribeirao-preto.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraVidasNegras: file(
+          relativePath: { eq: "bandeira-vidas-negras.png" }
+        ) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
+            )
+          }
+        }
+        bandeiraWhats: file(relativePath: { eq: "bandeira-whats.png" }) {
+          childrenImageSharp {
+            gatsbyImageData(
+              width: 300
+              height: 300
+              placeholder: NONE
+              quality: 100
             )
           }
         }

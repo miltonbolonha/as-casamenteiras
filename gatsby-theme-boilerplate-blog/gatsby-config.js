@@ -48,6 +48,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
