@@ -422,7 +422,7 @@ const IndexPage = props => {
           />
         </Row>
         <HeadingBlock classes='m30auto' importance={9} width={400}>
-          Últimas Postagens
+          Últimos Eventos
         </HeadingBlock>
         <Row opt={{ isBoxed: true, classes: "main-container-wrapper" }}>
           <PostsBlock

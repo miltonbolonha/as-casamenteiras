@@ -67,7 +67,7 @@ export const useSiteMetadatas = () =>
           relativePath: { eq: "logo-fundo-transparent-900-w.png" }
         ) {
           childrenImageSharp {
-            gatsbyImageData(width: 900, placeholder: NONE, quality: 100)
+            gatsbyImageData(width: 900, quality: 100)
           }
         }
         profileOficial: file(
