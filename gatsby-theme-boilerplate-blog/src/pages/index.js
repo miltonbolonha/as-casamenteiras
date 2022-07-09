@@ -259,14 +259,13 @@ const IndexPage = props => {
                 >
                   <div className='home-profile-left-column'>
                     <p>
-                      <strong>Casamentos Realizados: </strong>45
-                      <sup>*</sup>
+                      <strong>Casamentos Realizados: </strong>51
                     </p>
                     <p>
                       <strong>Casamentos em Andamento: </strong>17
                     </p>
                     <p>
-                      <strong>Anos de Experiência: </strong>30 anos
+                      <strong>Anos de Experiência: </strong>12 anos
                     </p>
                     <GatsbyImage
                       image={githubGetImg}
@@ -377,9 +376,16 @@ const IndexPage = props => {
                     }`}
                   >
                     <h2>Histórico</h2>
-                    <p>As Casamenteiras...</p>
-                    <p>Filha de ...</p>
-                    <p>Destaca-se ...</p>
+
+                    <p>
+                      Após a amiga lhe convidar para organizar o seu casamento
+                      em 2010, Priscilla Barbosa decide se engajar e faz cursos
+                      com grandes especialistas em gestão de eventos.
+                    </p>
+                    <p>
+                      De lá para cá, foram mais de 50 casais felizes subindo ao
+                      altar junto com a Pri.
+                    </p>
                   </div>
                   <div
                     className={`home-profile-tab ${
@@ -387,17 +393,40 @@ const IndexPage = props => {
                     }`}
                   >
                     <h2>Profissão</h2>
-                    <p>Começou sua vida profissional aos ...</p>
-                    <p>Foi consultora ...</p>
+                    <p>
+                      É consultora na área de eventos. Formada em Gestão de
+                      Negócios pela USP-ESALQ, com título de MBA.
+                    </p>
+                    <p>
+                      Atuou na organização de casamentos ao ar livre conectados
+                      à natureza, miniwedding, praia, igrejas, chácaras,
+                      residências, destination e elopement wedding. Organiza
+                      cerimônias tradicionais e modernas, tais como: religiosa
+                      diversa, civil, ecológica, cerimônias ecumênicas ,
+                      Lgbtqia+ e temática.
+                    </p>
                   </div>
                   <div
                     className={`home-profile-tab ${
                       btnRef === 3 ? "" : "hide-me"
                     }`}
                   >
-                    <h2>As Casamenteiras</h2>
-                    <p>Tal como ...</p>
-                    <p>As Casamenteiras têm ...</p>
+                    <h2>Minha Família</h2>
+                    <p>
+                      Natural de São Paulo, a filha mais velha de Marli Barbosa
+                      e Ricardo Coelho, Priscilla Barbosa passa a sua infância
+                      aprendendo piano e canto.
+                    </p>
+                    <p>
+                      Ainda menina começa a organizar eventos em igrejas e
+                      festas da sua grande família.
+                    </p>
+                    <p>
+                      É a primeira filha de sua mãe e ajudou a cuidar de seus
+                      sete irmãos junto à ela ainda na infância. E a essa
+                      experiência enriquecedora dedica grande gratidão por ter
+                      moldado a sua formação como mulher forte e independente.
+                    </p>
                   </div>
                 </Row>
               </div>

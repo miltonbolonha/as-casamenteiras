@@ -105,7 +105,7 @@ module.exports = {
         path: path.resolve(rootDir, "content/pages"),
       },
     },
-    `gatsby-plugin-mdx`,
+
     // {
     //   resolve: `@slixites/gatsby-plugin-google-fonts`,
     //   options: {

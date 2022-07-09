@@ -6,7 +6,7 @@ import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
-const OneColumn = ({ data, location, pageContext }) => {
+const OneColumn = ({ location, pageContext }) => {
   const {
     imgHolder,
     bgPatternImg,
@@ -16,8 +16,6 @@ const OneColumn = ({ data, location, pageContext }) => {
   } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
-  console.log("pageContext");
-  console.log(pageContext);
   const { title, content, description } = pageContext;
   return (
     <MainPageWrapper

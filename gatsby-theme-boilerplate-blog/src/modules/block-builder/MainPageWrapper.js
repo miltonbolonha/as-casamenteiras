@@ -26,7 +26,7 @@ const MainPageWrapper = ({
     bannerContent,
     boilerplateLogo,
   } = useSiteMetadatas();
-  const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
+  // const imageQuery = getImage(bannerContent.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
   const logoQuerySrc = getSrc(boilerplateLogo.childrenImageSharp[0]);
   return (
@@ -48,17 +48,8 @@ const MainPageWrapper = ({
           />
         }
       />
-      {/* <Row opt={{ classes: "banner colorME", isBoxed: true }}>
-        <GatsbyImage
-          image={imageQuery}
-          alt={"Imagem em Destaque"}
-          placeholder={"NONE"}
-          critical='true'
-          className={"highlight-img"}
-        />
-      </Row> */}
       <main className='main-container' id='site-content' role='list'>
-        <HeadingBlock classes='m30auto' importance={9} width={400}>
+        <HeadingBlock classes='m30auto' importance={10} width={400}>
           {title}
         </HeadingBlock>
         <Row

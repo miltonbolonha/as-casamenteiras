@@ -23,6 +23,7 @@ module.exports = {
         devMode: false,
       },
     },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
