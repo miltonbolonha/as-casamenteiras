@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 
 import MainTemplateWrapper from "@BlockBuilder/MainTemplateWrapper";
 
@@ -8,14 +8,13 @@ import { useSiteMetadatas } from "../tools/useSiteMetadatas";
 
 import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image";
 
-const SinglePost = ({ data, location }) => {
+const SinglePost = ({ data, location, pageContext }) => {
   const { imgHolder, bgPatternImg, boilerplateLogo, site } = useSiteMetadatas();
   const bgPatternSrc = getSrc(bgPatternImg.childrenImageSharp[0]);
   const logoQuery = getImage(boilerplateLogo.childrenImageSharp[0]);
+  // console.log(pageContext.thePost);
+  const post = pageContext.thePost;
 
-  const post = data.markdownRemark;
-  console.log("post::");
-  console.log(post);
   return (
     <MainTemplateWrapper
       backgroundImage={{
@@ -69,40 +68,5 @@ const SinglePost = ({ data, location }) => {
     </MainTemplateWrapper>
   );
 };
-
-export const query = graphql`
-  query SinglePost($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        updatedAt(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-        author
-        categories
-        featuredPost
-        featuredImage {
-          childrenImageSharp {
-            gatsbyImageData(
-              width: 1200
-              height: 627
-              placeholder: NONE
-              quality: 90
-            )
-          }
-        }
-      }
-      excerpt(pruneLength: 200)
-      html
-      fields {
-        slug
-      }
-      timeToRead
-      wordCount {
-        paragraphs
-        sentences
-        words
-      }
-    }
-  }
-`;
 
 export default SinglePost;

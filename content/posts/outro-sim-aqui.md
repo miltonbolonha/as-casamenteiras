@@ -1,4 +1,5 @@
 ---
+topology: posts
 title: Outro sim aqui
 headline: Os pré-moldades chegaram para ficar no meio industrial
 date: 2022-04-08T22:11:20+00:00

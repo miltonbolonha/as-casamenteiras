@@ -9,13 +9,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   // Ensures we are processing only markdown files
   if (node.internal.type === "MarkdownRemark") {
+    const basePathLabel =
+      node.frontmatter.topology === "pages" ? "pages" : "posts";
+
     // Use `createFilePath` to turn markdown files in our `data/faqs` directory into `/faqs/slug`
     const slug = createFilePath({
       node,
       getNode,
-      basePath: "pages",
+      basePath: basePathLabel,
     });
-
     // Creates new query'able field with name of 'slug'
     createNodeField({
       node,
@@ -37,15 +39,22 @@ exports.createPages = ({ graphql, actions }) => {
       }
       allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { date: { lt: "null" } } }
+        filter: { frontmatter: { createdAt: { lt: "null" } } }
       ) {
         edges {
           node {
             fields {
               slug
             }
+            timeToRead
+            wordCount {
+              paragraphs
+              sentences
+              words
+            }
             frontmatter {
               date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+              topology
               title
               author
               featuredPost
@@ -66,11 +75,12 @@ exports.createPages = ({ graphql, actions }) => {
             }
             excerpt(pruneLength: 200)
             htmlAst
+            html
           }
         }
       }
       categoriesGroup: allMarkdownRemark(
-        filter: { frontmatter: { date: { lt: "null" } } }
+        filter: { frontmatter: { createdAt: { lt: "null" } } }
         limit: 800
       ) {
         group(field: frontmatter___categories) {
@@ -97,24 +107,46 @@ exports.createPages = ({ graphql, actions }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               status
               title
               description
               slug
+              featuredImage {
+                childrenImageSharp {
+                  gatsbyImageData(
+                    width: 350
+                    height: 224
+                    placeholder: NONE
+                    quality: 100
+                  )
+                }
+              }
+              date
             }
             html
+            htmlAst
+            excerpt(pruneLength: 200)
           }
         }
       }
     }
   `).then(result => {
     const pages = result.data.allPages.edges;
+    let allPages = [];
 
     pages.forEach(({ node }) => {
+      let imgsPageObj = [];
+      const imagePageSrc =
+        businessInfos.siteUrl +
+        node.frontmatter.featuredImage.childrenImageSharp[0].gatsbyImageData
+          .images.fallback.src;
       if (node.frontmatter.status === true) {
         createPage({
-          path: node.frontmatter.slug,
+          path: node.fields.slug,
           component: path.resolve(
             rootDir,
             `gatsby-theme-boilerplate-blog/src/templates/one-column.js`
@@ -125,21 +157,76 @@ exports.createPages = ({ graphql, actions }) => {
             description: node.frontmatter.description,
           },
         });
+        node.htmlAst.children.map(child => {
+          if (child.children && child.children[0]) {
+            if (child.children[0].tagName === "img") {
+              imgsPageObj.push(child.children[0].properties.src);
+            }
+          }
+        });
+
+        allPages.push({
+          slug: node.fields.slug,
+          date: node.frontmatter.date,
+          title: node.frontmatter.title,
+          imageSrc: imagePageSrc,
+          excerpt: node.excerpt,
+          insideImgs: imgsPageObj,
+        });
       }
     });
 
+    // xml pages
+
+    const theXMLpages = `<?xml version="1.0" encoding="UTF-8"?>
+		<?xml-stylesheet type="text/xsl" href="/template.xsl"?>
+			<urlset
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+				xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+				${allPages.map(item => {
+          return `<url>
+					<loc>${businessInfos.siteUrl}${item.slug}</loc>
+					<lastmod>${item.date}</lastmod>
+					<image:image>
+						<image:loc>${item.imageSrc}</image:loc>
+					</image:image>
+						${
+              item.insideImgs.length > 0
+                ? item.insideImgs.map(img => {
+                    return `<image:image>
+											<image:loc>${
+                        img.substring(0, 4) === "http"
+                          ? img
+                          : businessInfos.siteUrl + img
+                      }</image:loc>
+										</image:image>`;
+                  })
+                : ""
+            }
+				</url>`;
+        })}
+		</urlset>
+		`;
+    fs.writeFileSync(`./public/page-sitemap.xml`, theXMLpages);
+
+    // xml pages
+
     const posts = result.data.allMarkdownRemark.edges;
     posts.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(
-          rootDir,
-          "gatsby-theme-boilerplate-blog/src/templates/single-post.js"
-        ),
-        context: {
-          slug: node.fields.slug,
-        },
-      });
+      if (node.frontmatter.topology === "posts") {
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve(
+            rootDir,
+            "gatsby-theme-boilerplate-blog/src/templates/single-post.js"
+          ),
+          context: {
+            slug: node.fields.slug,
+            thePost: node,
+          },
+        });
+      }
     });
 
     const categories = result.data.categoriesGroup.group;

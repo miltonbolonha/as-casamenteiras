@@ -557,7 +557,7 @@ export const queryAtividade = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { date: { lt: "null" } } }
+      filter: { frontmatter: { createdAt: { lt: "null" } } }
       limit: 900
     ) {
       edges {

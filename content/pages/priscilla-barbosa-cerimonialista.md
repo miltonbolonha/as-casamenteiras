@@ -1,8 +1,11 @@
 ---
+topology: pages
 status: true
 title: Priscilla Barbosa Cerimonialista
 description: Foram mais de 50 casais felizes subindo ao altar junto com a Pri. É consultora na área de eventos. Formada em Gestão de Negócios pela USP-ESALQ, com título de MBA.
 slug: priscilla-barbosa-cerimonialista
+featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
+date: 2022-05-30T19:50:00+00:00
 ---
 
 Natural de São Paulo, a filha mais velha de Marli Barbosa e Ricardo Coelho, Priscilla Barbosa passa a sua infância aprendendo piano e canto. Ainda menina começa a organizar eventos em igrejas e festas da sua grande família.

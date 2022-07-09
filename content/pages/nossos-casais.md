@@ -1,8 +1,11 @@
 ---
+topology: pages
 status: true
 title: Nossos Casais
 description: As Casamenteiras realizam assessoria e cerimonal de casamentos, eventos corporativos e festas em geral.
 slug: nossos-casais
+featuredImage: ../posts/images/52015494369_659ac9d5bb_o.jpg
+date: 2022-01-30T19:50:00+00:00
 ---
 
 No Nossos.NAME\_\_, nosso objetivo é fornecer conteúdo para todos.

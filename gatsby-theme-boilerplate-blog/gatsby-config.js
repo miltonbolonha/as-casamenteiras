@@ -88,14 +88,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.resolve(rootDir, "posts/images/"),
+        path: path.resolve(rootDir, "content/posts/images/"),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: path.resolve(rootDir, "posts/"),
+        path: path.resolve(rootDir, "content/posts/"),
       },
     },
     {
@@ -127,7 +127,7 @@ module.exports = {
       options: {
         alias: {
           "@BlockBuilder": path.resolve(__dirname, "src/modules/block-builder"),
-          "@Posts": path.resolve(rootDir, "posts"),
+          "@Posts": path.resolve(rootDir, "content/posts"),
           "@Content": path.resolve(rootDir, "content"),
           "@Images": path.resolve(__dirname, "static/images"),
         },
