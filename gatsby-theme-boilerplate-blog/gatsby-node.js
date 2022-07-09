@@ -65,10 +65,10 @@ exports.createPages = ({ graphql, actions }) => {
               featuredImage {
                 childrenImageSharp {
                   gatsbyImageData(
-                    width: 350
-                    height: 224
+                    width: 1200
+                    height: 627
                     placeholder: NONE
-                    quality: 100
+                    quality: 90
                   )
                 }
               }
